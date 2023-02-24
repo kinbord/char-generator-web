@@ -1,9 +1,19 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import name from "./server";
+import fetchNPC from "./server";
 
 function App() {
+    const [state, setState] = useState('');
+    const [name, setName] = useState('');
+    useEffect(() => {
+        setState('loading');
+        fetchNPC().then((res) => {
+            setState('success')
+            setName(res)
+        })
+    }, []);
+
   return (
       <>
         <div className="char-generator-web">
@@ -13,7 +23,7 @@ function App() {
               My character:
             </p>
             <h1>
-              ${name}
+              {name}
             </h1>
           </header>
         </div>

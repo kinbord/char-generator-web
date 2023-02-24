@@ -1,5 +1,5 @@
 
-const bob = async function fetchNPC(): Promise<string> {
+export default function fetchNPC(): Promise<string> {
     const url = new URL("http://localhost:8098/NPC");
 
     const name = fetch(url)
@@ -13,6 +13,4 @@ const bob = async function fetchNPC(): Promise<string> {
     return name
 }
 
-const name = await bob()
 
-export default name
