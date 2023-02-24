@@ -1,20 +1,23 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import name from "./server";
 
 function App() {
   return (
-    <div className="char-generator-web">
-      <header className="char-generator-web-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          My character:
-        </p>
-        <h1>
-          Placeholder
-        </h1>
-      </header>
-    </div>
+      <>
+        <div className="char-generator-web">
+          <header className="char-generator-web-header">
+            <img src={logo} className="App-logo" alt="logo"/>
+            <p>
+              My character:
+            </p>
+            <h1>
+              ${name}
+            </h1>
+          </header>
+        </div>
+      </>
   );
 }
 
